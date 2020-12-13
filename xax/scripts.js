@@ -113,14 +113,24 @@ function draw() {
 
 //dom
 
-var ktcneluqanak = 0
-function ktcnel(e){
-    ++ktcneluqanak
-    console.log(e.target.innerText)
-    var tox = "shnorhakalutyun ktcnelu hamar" + ktcneluqanak
-    this.innerText = tox
+// var ktcneluqanak = 0
+// function ktcnel(e){
+//     ++ktcneluqanak
+//     console.log(e.target.innerText)
+//     var tox = "shnorhakalutyun ktcnelu hamar" + ktcneluqanak
+//     this.innerText = tox
+// }
+
+// var p = document.getElementById("Xax")
+// console.log(p)
+// p.addEventListener("click", ktcnel)
+
+function guynpoxox(e){
+    document.body.style.background = "red"
 }
 
-var p = document.getElementById("Xax")
-console.log(p)
-p.addEventListener("click", ktcnel)
+var guyn = document.getElementById("arachin")
+guyn.addEventListener("click", guynpoxox) 
+
+
+//window.reload()
