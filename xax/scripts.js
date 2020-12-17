@@ -81,6 +81,9 @@ function draw() {
             else if (matrix[y][x] == 0) {
                 fill("#acacac");
             }
+            else if(matrix[y][x] = 66) {
+                fill("orange")
+            }
 
             rect(x * side, y * side, side, side);
         }
@@ -111,26 +114,28 @@ function draw() {
     }
 }
 
-//dom
-
-// var ktcneluqanak = 0
-// function ktcnel(e){
-//     ++ktcneluqanak
-//     console.log(e.target.innerText)
-//     var tox = "shnorhakalutyun ktcnelu hamar" + ktcneluqanak
-//     this.innerText = tox
-// }
-
-// var p = document.getElementById("Xax")
-// console.log(p)
-// p.addEventListener("click", ktcnel)
 
 function guynpoxox(e){
-    document.body.style.background = "red"
+    document.body.style.background = "gray"
 }
-
 var guyn = document.getElementById("arachin")
 guyn.addEventListener("click", guynpoxox) 
 
 
-//window.reload()
+function refresh(e){
+    document.location.reload()
+}
+var knopka = document.getElementById("erkrord")
+knopka.addEventListener('click', refresh)
+
+function traqcnel(e){
+    grassArr.length = 0
+    grassEaterArr.length = 0
+    gishatichArr.length = 0
+    bombArr.length = 0
+    lazerArr.length = 0
+    for(var x = 0; x < matrix.length; x++){
+        for(var y = 0; y < matrix[x].length; y++)
+        matrix[y][x] = 66
+    }
+}
