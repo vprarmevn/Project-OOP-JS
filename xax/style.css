@@ -1,0 +1,55 @@
+#div1{
+    float: right;
+    margin-right: 140px;
+    margin-top: 20px;
+}
+
+button{
+    margin: 3px;
+    width: 235px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+#input{
+    margin: 3px;
+    width: 200px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+#div2{
+    margin-bottom: 30px;
+}
+
+table{
+    border: 2px solid black;
+    margin: 3px;
+    width: 235px;
+    background-color: whitesmoke;
+}
+
+.a{
+    width: px;
+    background-color: green;
+}
+.b{
+    width: 35px;
+    background-color: yellow;
+}
+.c{
+    width: 35px;
+    background-color: red;
+}
+.d{
+    width: 35px;
+    background-color: black;
+}
+.e{
+    width: 35px;
+    background-color: blue;
+}

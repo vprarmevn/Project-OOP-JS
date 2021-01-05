@@ -3,13 +3,12 @@ function genMatrix(w, h) {
     for (var y = 0; y < h; y++) {
         matrix[y] = [];
         for (var x = 0; x < w; x++) {
-            var r = Math.floor(Math.random() * 900);
-            if (r < 150) r = 0;
-            else if (r < 400) r = 1;
-            else if (r < 790) r = 2;
-            else if (r < 850) r = 3;
-            else if (r < 970) r = 4;
-            // else if (r < 64 && x == y) r = 5; 
+            var r = Math.floor(Math.random() * 784);
+            if (r < 500) r = 0;
+            else if (r < 650) r = 1;
+            else if (r < 750) r = 2;
+            else if (r < 770) r = 3;
+            else if (r < 784) r = 4;
             matrix[y][x] = r;
             if (x == y) {
                 matrix[y][x] = 5;
@@ -19,9 +18,9 @@ function genMatrix(w, h) {
     return matrix;
 }
 
-var matrix = genMatrix(30, 30)
-
-var side = 25;
+var matrix = genMatrix(28, 28)
+var hoviv
+var side = 22;
 var grassArr = []
 var grassEaterArr = []
 var gishatichArr = []
@@ -29,7 +28,7 @@ var bombArr = []
 var lazerArr = []
 
 function setup() {
-    frameRate(3);
+    frameRate(5);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -81,8 +80,11 @@ function draw() {
             else if (matrix[y][x] == 0) {
                 fill("#acacac");
             }
-            else if(matrix[y][x] = 66) {
+            else if (matrix[y][x] = 66) {
                 fill("orange")
+            }
+            else if (matrix[y][x] = 77) {
+                fill("brown")
             }
 
             rect(x * side, y * side, side, side);
@@ -114,28 +116,76 @@ function draw() {
     }
 }
 
+function keyPressed() {
+    if (keyCode === UP_ARROW) {
+        hoviv.move(38)
+        console.log("verev")
+    } else if (keyCode === DOWN_ARROW) {
+        hoviv.move(40)
+        console.log("nerqev")
+    } else if (keyCode === LEFT_ARROW) {
+        hoviv.move(37)
+        console.log("dzax")
+    } else if (keyCode === RIGHT_ARROW) {
+        hoviv.move(39)
+        console.log("aj")
+    }
+}
 
-function guynpoxox(e){
+function guynpoxox(e) {
     document.body.style.background = "gray"
 }
-var guyn = document.getElementById("arachin")
-guyn.addEventListener("click", guynpoxox) 
+var guyn = document.getElementById("body")
+guyn.addEventListener("click", guynpoxox)
 
 
-function refresh(e){
+function refresh(e) {
     document.location.reload()
 }
-var knopka = document.getElementById("erkrord")
+var knopka = document.getElementById("refresh")
 knopka.addEventListener('click', refresh)
 
-function traqcnel(e){
+function traqcnel(e) {
     grassArr.length = 0
     grassEaterArr.length = 0
     gishatichArr.length = 0
     bombArr.length = 0
     lazerArr.length = 0
-    for(var x = 0; x < matrix.length; x++){
-        for(var y = 0; y < matrix[x].length; y++)
-        matrix[y][x] = 66
+    for (var x = 0; x < matrix.length; x++) {
+        for (var y = 0; y < matrix[x].length; y++)
+            matrix[y][x] = 66
+    }
+}
+
+//hoviv stexcel
+
+var buttonhoviv = document.getElementById("hovivstexcel")
+buttonhoviv.addEventListener("click", function () {
+    hovivavelana()
+})
+
+function hovivavelana() {
+    if (grassArr.length == (matrix.length * matrix[0].length)) {
+        randomtex()
+        stexcelhoviv()
+    }
+    else{
+        alert("spaseq sax darna xot")
+    }
+}
+
+function randomtex() {
+    var x = Math.floor(Math.random() * matrix[0].length);
+    var y = Math.floor(Math.random() * matrix.length);
+    matrix[y][x] = 77
+}
+
+function stexcelhoviv() {
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] == 77) {
+                hoviv = new Hoviv(x, y, 77)
+            }
+        }
     }
 }
